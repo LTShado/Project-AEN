@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Accueil </title>
+    <title> Services </title>
     <link rel="stylesheet" href="CSS/CSS.css">
     <link rel="stylesheet" href="CSS/bootstrap.css">
 </head>
@@ -14,13 +14,13 @@
       include("header.php");
   ?>
   <main>
-    <div>
+    <div class="services">
         <div class="img_back">
             <!--<img id="img_back" src="images/background.png">-->
         </div>
         <div class="intro">
           <section>
-            <h1>Présentation</h1>
+            <h1>Services</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -36,6 +36,12 @@
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </section>
+        </div>
+        <div class="connexion_service">
+          <?php   $connected = isset($_SESSION['email']) ? true : false;
+          if(!$connected){ ?>
+            <a href="connexion.php">Se connecter</a>
+          <?php } ?>
         </div>
         </div>
     </div>

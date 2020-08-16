@@ -36,7 +36,8 @@
       $_SESSION['email'] = $answers['email'];
       $_SESSION['nom'] = $answers['nom'];
       $_SESSION['prenom'] = $answers['prenom'];
-
+      $_SESSION['statut_pilote'] = $answers['statut_pilote'];
+      $_SESSION['statut_initiation'] = $answers['statut_initiation'];
   		echo "ok";
   }
 else{

@@ -47,7 +47,6 @@ main {
 	min-height:57.8vh;
 	display:flex;
 	flex-direction:column;
-	background-color: #0000F0;
 	width: 100%;
  	flex-grow: 1;
  	max-width: 1024px;
@@ -212,6 +211,7 @@ padding: 0;
 	border-width:1px;
 	border-style:solid;
 	border-color:black;
+	padding: 20px;
 }
 
 .creation_compte{
@@ -219,6 +219,7 @@ padding: 0;
 	border-width:1px;
 	border-style:solid;
 	border-color:black;
+	padding: 20px;
 }
 
 .twitter{
@@ -270,6 +271,10 @@ padding: 0;
 	color: #EF3340;
 }
 
+.error_meteo{
+	color: #EF3340;
+}
+
 .infos_titre{
 	background-color: #FF0000;
 }
@@ -277,6 +282,133 @@ padding: 0;
 	background-color: #00FF00;
 }
 
-.infos_compte input,#btn_enregistrer{
+.infos_compte input,.input,#btn_enregistrer,.input_stationnement,.input_avitaillement,.input_nettoyage{
 	display: none;
+}
+
+.button_submit{
+	display: inline-block;
+	display:inherit;
+	text-align: center;
+	background-color: #EF3340;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.button_submit a{
+	color: #FFFFFF;
+}
+
+.button_submit:hover a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#submit{
+	background: none;
+  border: none;
+	outline:none;
+	padding: 0;
+  color: #FFFFFF;
+}
+
+#submit:hover{
+	cursor: pointer;
+}
+
+#forgot{
+	color: #171796;
+}
+
+.intro_head{
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.intro_head img{
+	height: 125px;
+	width: 100%;
+}
+
+.img_loisir img{
+	height: 125px;
+	width: 100%;
+}
+
+.intro_head h1{
+	color: #FFFFFF;
+}
+
+.texte_head{
+	position:absolute;
+	top:50px;
+	width:75%;
+	height:100px;
+	z-index:2;
+	font-size:50%"
+}
+
+td,th{
+	border: solid 1px;
+	padding: 10px;
+}
+
+.hide{
+	display: none;
+}
+
+.calendrier{
+	width: 100%;
+	height: calc(100vh - 170px);
+}
+
+.calendrier td{
+	padding: 10px;
+	border: 1px solid #CCC;
+	vertical-align: top;
+	width: 14.29%;
+	height: 20%;
+}
+
+.calendrier_6 td{
+	height: 16.66%;
+}
+
+.calendrier_semaine{
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+
+.calendrier_hors_mois .calendrier_nb_jour{
+	opacity: 0.3;
+}
+
+.calendrier_aujourdhui{
+	background-color: #e2e2e2;
+}
+
+.calendrier_ajout{
+	display: block;
+	width: 55px;
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 30px;
+	background-color: #171796;
+	border-radius: 50%;
+	position: absolute;
+	bottom: -35px;
+	right: 250px;
+	text-decoration: none;
+}
+
+.calendrier_ajout:hover{
+	text-decoration: none;
+	color: #EF3340;
+}
+
+.button_submit input{
+	width: 100%;
 }

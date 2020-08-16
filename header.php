@@ -51,7 +51,11 @@
 	</div>
 		<div class="menu_lvl1">
 			<a class="link" href="index.php"> Accueil </a>
+			<?php if($_SESSION['statut_pilote'] == 0){ ?>
 			<a class="link" href="services.php"> Nos Services </a>
+		<?php }else{?>
+			<a class="link" href="vosservices.php"> Vos Services </a>
+		<?php }?>
 			<a class="link" href="aeroclub.php"> Aéroclub </a>
 		</div>
 	</div>

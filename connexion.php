@@ -24,9 +24,9 @@
             <h2>Mot de passe*</h2>
             <input type="password" name="mdp" id="mdp">
             <br>
-            <a href="#">Mot de passe oublié ?</a>
+            <a href="#" id="forgot">Mot de passe oublié ?</a>
             <br>
-            <div class="submit">
+            <div class="button_submit">
               <input type="button" onclick="connect()" name="connexion" value="Se connecter" id="submit">
             </div>
           </div>
@@ -43,7 +43,9 @@
                My Paris Aéroport !
             </p>
             <!--<input type="submit" name="connection" value="Créer mon compte">-->
-            <a href="inscription.php">Créer mon compte</a>
+            <div class="button_submit">
+              <a href="inscription.php">Créer mon compte</a>
+            </div>
           </div>
         </div>
       </div>

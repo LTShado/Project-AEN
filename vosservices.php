@@ -19,11 +19,11 @@
         <section>
           <div class="intro_head">
              <div>
-                <img src="images/aeroclub_head2.jpg">
+                <img src="images/services_head.png">
              </div>
              <div class="texte_head">
-                <center><h1>Aéroclub</h1></center>
-              </div>
+               <center><h1>Nos services</h1></center>
+             </div>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -44,12 +44,12 @@
       <div class="activite">
         <?php
         require_once('includes/connexiondb.php');
-          $connected = isset($_SESSION['email']) ? true : false;
+
          $bdd =  connectionDB();
          $q = "SELECT * FROM services where loisir = ?";
 
         $req = $bdd -> prepare($q);
-        $req -> execute(array(1));
+        $req -> execute(array(0));
 
         while($answers = $req->fetch()) {
             echo '<div class="titre_loisir">';
@@ -60,28 +60,14 @@
             echo '</div>';
             echo '<div class="description_loisir">';
             echo '<p>'.$answers['c_description'].'</p>';
-            if($answers['service'] == "rien"){
-              echo '<a href="default.php">Cliquez ici</a>';
-            }else if(!$connected){
-              echo '<a href="'.$answers['url_page'].'">Information '.$answers['nom'].'</a>';
-            }else{
-              echo '<a href="reservation.php?service='.$answers['service'].'">Reservez</a>';
-            }
             echo '</div>';
         }
         ?>
       </div>
-      <div class="connexion_service">
-        <?php if(!$connected){ ?>
-          <a href="lecon_initiation.php">Information initiation</a>
-        <?php } else{if($_SESSION['statut_pilote'] == 1 || $_SESSION['statut_initiation'] == 1){ ?>
-            <a href="reservation.php">Vos cours</a>
-        <?php }if($_SESSION['statut_pilote'] == 0 && $_SESSION['statut_initiation'] == 0){?>
-          <a href="lecon_initiation.php">Information initiation</a>
-        <?php }}?>
-        <a href="lecon_initiation.php">Information initiation</a>
+        <a href="reservation.php?service=service_pilote">Demander un service</a>
+      <div class="link_tarif">
+        <a href="tarifs.php">Nos tarifs</a>
       </div>
-
     </div>
   </main>
   <?php

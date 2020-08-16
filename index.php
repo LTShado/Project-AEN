@@ -20,7 +20,14 @@
         </div>
         <div class="intro">
           <section>
-            <h1>Présentation</h1>
+            <div class="intro_head">
+               <div>
+                  <img src="images/background.png">
+               </div>
+               <div class="texte_head">
+                  <center><h1>Présentation</h1></center>
+                </div>
+            </div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

@@ -20,7 +20,14 @@
         </div>
         <div class="intro">
           <section>
-            <h1>Services</h1>
+            <div class="intro_head">
+               <div>
+                  <img src="images/services_head.png">
+               </div>
+               <div class="texte_head">
+                  <center><h1>Nos services</h1></center>
+                </div>
+            </div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -41,7 +48,9 @@
           <?php   $connected = isset($_SESSION['email']) ? true : false;
           if(!$connected){ ?>
             <a href="connexion.php">Se connecter</a>
-          <?php } ?>
+          <?php } else{?>
+            <p>Vous n'êtes pas inscrit en tant que pilote</p>
+          <?php }?>
         </div>
         </div>
     </div>

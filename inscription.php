@@ -18,6 +18,16 @@
       <div class="inscrire">
         <div class="civ">
           <h2>Civilité</h2>
+          <div class="gender">
+            <div>
+              <input type="radio" name="gender" value="mme">
+              <label>Mme</label>
+            </div>
+            <div>
+              <input type="radio" name="gender" value="mr">
+              <label>Mr</label>
+            </div>
+          </div>
         </div>
         <div class="nom">
           <h2>Votre nom</h2>
@@ -49,7 +59,53 @@
           <h2>Votre numéro de portable</h2>
           <input type="tel" name="tel" maxlength="10" id="tel">
         </div>
-        <div class="submit">
+        <div>
+          <label>Pilote</label>
+          <input type="checkbox" onclick="add_row_avion()" name="check" id="check" value="1">
+        </div>
+        <div class="input">
+          <div class="">
+            <h2>Le nom de votre avion:</h2>
+            <input type="text" name="nom_avion" id="nom_avion">
+          </div>
+          <div class="">
+            <h2>La marque de votre avion:</h2>
+            <input type="text" name="marque_avion" id="marque_avion">
+          </div>
+          <div class="">
+            <h2>Le type de l'avion:</h2>
+            <select name="type_avion" id="type_avion">
+                <option value="">--Choisissez un type--</option>
+                <option value="Mono-turbine Bi-turbine">Mono-turbine Bi-turbine</option>
+                <option value="Réacteur mono/multi">Réacteur mono/multi</option>
+            </select>
+          </div>
+          <div class="">
+            <h2>La masse de votre avion rempli au maximum(en kg):</h2>
+            <input type="number" name="masse" id="masse">
+          </div>
+        <div class="">
+          <h2>La longueur de votre avion(en mètre):</h2>
+          <input type="number" name="longueur" id="longueur">
+        </div>
+        <div class="">
+          <h2>L'envergurede votre avion(en mètre):</h2>
+          <input type="number" name="envergure" id="envergure">
+        </div>
+        <div class="">
+          <h2>Le groupe acoustique de votre avion:</h2>
+          <select name="grp_acoustique" id="grp_acoustique">
+              <option value="">--Choisissez un groupe--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5a">5a</option>
+              <option value="5b">5b</option>
+          </select>
+        </div>
+      </div>
+        <div class="button_submit">
           <input type="button" onclick="add()" name="inscription" value="Créer mon compte" id="submit">
         </div>
         <div class="error" id="error">

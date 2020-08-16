@@ -19,8 +19,9 @@
         <a href="infos_profil.php">Informations du compte</a>
       </div>
       <div class="meteo">
-        <a href="">Informations météorologique</a>
+        <a href="meteo.php">meteo</a>
       </div>
+      <a href="test.php">test pour envoyer mail</a>
     </div>
   </main>
   <?php

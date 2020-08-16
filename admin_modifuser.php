@@ -1,48 +1,36 @@
-<?php session_start();
-$connected = isset($_SESSION['email']) ? true : false;?>
+<?php session_start(); ?>
 <!Doctype html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title> Accueil </title>
+    <title> Admin User Modif </title>
     <link rel="stylesheet" href="CSS/CSS.css">
     <link rel="stylesheet" href="CSS/bootstrap.css">
 </head>
 
 <body>
-  <?php
-      include("header.php");
-  ?>
-  <script src="AJAX/infos.js"></script>
+  <script src="AJAX/admin_infos.js"></script>
   <main>
-    <div class="">
-        <a href="index.php">Accueil</a>
-        <p>></p>
-        <a href="profil.php">Profil</a>
-        <p>></p>
-        <a href="infos_profil.php">Informations du compte</a>
+    <div class="titre">
+        <h1>Page Admistration Des Utilisateurs</h1>
     </div>
-    <div class="infos">
-      <div class="infos_titre">
-        <h1>Informations du compte</h1>
-      </div>
-      <div class="vos_infos">
-        <h2>Vos informations personnelles</h2>
-        <?php
-        require_once('includes/connexiondb.php');
+    <div class="liens_administration">
+      <?php
+      require_once('includes/connexiondb.php');
+       $bdd =  connectionDB();
+       $q = "SELECT * FROM client WHERE id = ?";
 
-         $bdd =  connectionDB();
-         $q = "SELECT * FROM client WHERE email = ?";
+       $req = $bdd -> prepare($q);
+       $req -> execute(array($_GET['id']));
 
-         $req = $bdd -> prepare($q);
-         $req -> execute(array($_SESSION['email']));
-         $answers = $req -> fetch();
-         ?>
-         <div class="infos_compte">
+       $answers = $req->fetch();
+       ?>
+       <div class="infos_compte">
+          <input type="text" class="hide" value="<?=$answers['id']?>" id="id">
            <h3>Email :</h3>
            <div class="text_infos">
-             <p id="txt_email"><?= $_SESSION['email']?></p>
+             <p id="txt_email"><?= $answers['email']?></p>
            </div>
            <input type="email" name="email" class="input" id="email" value="<?= $answers['email']?>">
 
@@ -60,13 +48,25 @@ $connected = isset($_SESSION['email']) ? true : false;?>
 
            <h3>Civ :</h3>
            <div class="text_infos">
-             <?= $answers['civ']?>
+             <p id="txt_civ"><?= $answers['civ']?></p>
+           </div>
+
+           <div class="gender_admin">
+             <div>
+               <input type="radio" name="gender" class="input" value="mme">
+               <label class="input">Mme</label>
+             </div>
+             <div>
+               <input type="radio" name="gender" class="input" value="mr">
+               <label class="input">Mr</label>
+             </div>
            </div>
 
            <h3>Date de naissance :</h3>
            <div class="text_infos">
-             <?= $answers['birth']?>
+             <p id="txt_birth"><?= $answers['birth']?></p>
            </div>
+           <input type="date" name="birth" class="input" id="birth" value="<?= $answers['birth']?>">
 
            <h3>Code postal :</h3>
            <div class="text_infos">
@@ -75,10 +75,17 @@ $connected = isset($_SESSION['email']) ? true : false;?>
           <input type="number" name="postal" class="input" id="postal" value="<?= $answers['postal']?>">
 
            <h3>Numéro de portable : </h3>
-           <input type="tel" name="tel" class="input" id="tel" value="<?= $answers['tel']?>">
            <div class="text_infos">
              <p id="txt_tel"><?= $answers['tel']?></p>
            </div>
+           <input type="tel" name="tel" class="input" id="tel" value="<?= $answers['tel']?>">
+
+           <h3>Statut Pilote : </h3>
+           <div class="text_infos">
+             <p id="txt_statut_pilote"><?= $answers['statut_pilote']?></p>
+           </div>
+           <input type="text" name="statut_pilote" class="input" id="statut_pilote" value="<?= $answers['statut_pilote']?>">
+
            <button type="button" onclick="modify()" name="modifier" id="btn_modify">Modifier</button>
            <button type="button" onclick="enregistrer()" name="enregistrer" id="btn_enregistrer" >Enregister</button>
            <div class="error" id="error">
@@ -89,5 +96,4 @@ $connected = isset($_SESSION['email']) ? true : false;?>
   <?php
       include("footer.php");
   ?>
-  </body>
-</html>
+</body>
